@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+
   get 'restaurants/list'
-  get '/auth/:provider/callback' => 'authentications#create'
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   get 'welcome/welcome'
   root 'welcome#welcome'
 
