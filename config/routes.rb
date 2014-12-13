@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'restaurants/list'
-  match '/auth/:provider/callback' => 'authentications#create'
+  get '/auth/:provider/callback' => 'authentications#create'
   devise_for :users
   get 'welcome/welcome'
   root 'welcome#welcome'
